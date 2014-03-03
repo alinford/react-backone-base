@@ -3,29 +3,29 @@ require.config({
 	paths: {
 		'jquery': '../bower_components/jquery/dist/jquery',
 		'underscore': '../bower_components/underscore/underscore',
-		'backbone': '../bower_components/backbone/backbone'
+		'backbone': '../bower_components/backbone/backbone',
+		'react': '../bower_components/react/react',
 	},
 	shim: {
-		'jquery': {
-			deps: [],
-			exports: '$'
-		},
-		'underscore': {
-			deps: [],
-			exports: '_'
-		},
-		'backbone': {
+		backbone: {
 			deps: [
 				'underscore',
 				'jquery'
 			],
 			exports: 'Backbone'
+		},
+		underscore: {
+			deps: [],
+			exports: '_'
+		},
+		react: {
+			exports: 'React',
 		}
 	}
 });
 
-require(['jquery', 'underscore', 'backbone', './zombie.js'], function($, _, Backbone, Zombie) {
-	$('body').remove();
+require(['./Router'], function(Router) {
+	'use strict';
 
-	var z = new Zombie();
+	var r = new Router();
 });
