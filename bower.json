@@ -2,8 +2,11 @@
   "name": "react-base",
   "private": true,
   "dependencies": {
-    "jquery": "~1.10.2",
+    "jquery": "~2.1.0",
     "requirejs": "~2.1.11"
   },
-  "devDependencies": {}
+  "devDependencies": {},
+  "resolutions": {
+    "jquery": "~1.10.2"
+  }
 }
