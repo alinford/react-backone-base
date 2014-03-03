@@ -14,6 +14,7 @@ define(['backbone'], function(Backbone) {
 
 		'job/add': function(step) {
 			this.navigate('job/add/step=0/select', {trigger: true});
+			console.log(step);
 		},
 
 		'job/add/step=0/select': function() {
