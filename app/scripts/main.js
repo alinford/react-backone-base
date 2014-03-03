@@ -3,6 +3,7 @@ require.config({
 	paths: {
 		'jquery': '../bower_components/jquery/dist/jquery',
 		'underscore': '../bower_components/underscore/underscore',
+		'backbone': '../bower_components/backbone/backbone'
 	},
 	shim: {
 		'jquery': {
@@ -12,10 +13,19 @@ require.config({
 		'underscore': {
 			deps: [],
 			exports: '_'
+		},
+		'backbone': {
+			deps: [
+				'underscore',
+				'jquery'
+			],
+			exports: 'Backbone'
 		}
 	}
 });
 
-require(['jquery', 'underscore'], function($, _) {
+require(['jquery', 'underscore', 'backbone', './zombie.js'], function($, _, Backbone, Zombie) {
 	$('body').remove();
+
+	var z = new Zombie();
 });
