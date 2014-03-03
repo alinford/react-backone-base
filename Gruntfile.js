@@ -11,12 +11,24 @@ module.exports = function (grunt) {
 
     // Load grunt tasks automatically
     require('load-grunt-tasks')(grunt);
+    grunt.loadNpmTasks('grunt-requirejs');
 
     // Time how long tasks take. Can help when optimizing build times
     require('time-grunt')(grunt);
 
     // Define the configuration for all the tasks
     grunt.initConfig({
+
+        requirejs: {
+            dist: {
+                options: {
+                    baseUrl         : '<%= yeoman.app %>/scripts/',
+                    name            : 'main',
+                    mainConfigFile  : '<%= yeoman.app %>/scripts/main.js',
+                    out             : '.tmp/concat/scripts/main.js'
+                }
+            }
+        },
 
         // Project settings
         yeoman: {
@@ -346,6 +358,7 @@ module.exports = function (grunt) {
         'concurrent:dist',
         'autoprefixer',
         'concat',
+	'requirejs:dist',
         'cssmin',
         'uglify',
         'copy:dist',
