@@ -358,7 +358,7 @@ module.exports = function (grunt) {
         'concurrent:dist',
         'autoprefixer',
         'concat',
-	'requirejs:dist',
+        'requirejs:dist',
         'cssmin',
         'uglify',
         'copy:dist',

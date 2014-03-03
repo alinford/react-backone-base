@@ -24,7 +24,7 @@ require.config({
 	}
 });
 
-require(['./Router'], function(Router) {
+require(['./router'], function(Router) {
 	'use strict';
 
 	var r = new Router();
