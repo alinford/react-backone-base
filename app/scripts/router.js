@@ -8,17 +8,11 @@ define(['backbone'], function(Backbone) {
 		},
 
 		routes: {
-			'': 'job/add',
-			'job/add/step=0/select': 'job/add/step=0/select',
+			'': 'index'
 		},
 
-		'job/add': function(step) {
-			this.navigate('job/add/step=0/select', {trigger: true});
-			console.log(step);
-		},
-
-		'job/add/step=0/select': function() {
-			alert('hello!');
+		'index': function() {
+			alert('hello from backbone router!');
 		},
 	});
 
